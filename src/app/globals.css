@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cool sage paper — avoid cream/terracotta AI-default palette */
+  --paper: #e8ebe4;
+  --ink: #152019;
+  --moss: #2f5240;
+  --rust: #8b3d2f;
+  --sand: #c5cebc;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.animate-drift {
+  animation: drift 7s ease-in-out infinite;
+}
+
+.animate-fade {
+  animation: fade-in 1s ease-out both;
+}
+
+.hero-wash {
+  background:
+    linear-gradient(120deg, rgba(26, 34, 24, 0.72) 0%, rgba(26, 34, 24, 0.35) 48%, rgba(61, 92, 69, 0.25) 100%),
+    url("https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1600&q=80")
+      center / cover no-repeat;
+}
+
+.texture-panel {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(197, 206, 188, 0.55), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(47, 82, 64, 0.08), transparent 50%);
+}
